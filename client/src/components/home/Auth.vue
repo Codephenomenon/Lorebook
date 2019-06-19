@@ -23,15 +23,28 @@
           </span>
         </div>
       </div>
-      <div class="auth_panel-body">
-        awda
+      <div class="auth_panel-login" v-if="display === true">
+        <AuthForm type="login"/>
+      </div>
+      <div class="auth_panel-login" v-if="display === false">
+        <AuthForm type="register"/>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import AuthForm from './AuthForm.vue';
+
 export default {
+  components: {
+    AuthForm
+  },
+  data: function() {
+    return {
+      display: true
+    }
+  },
   methods: {
     displayAuth: function() {
       this.$emit('displayAuth');
@@ -40,6 +53,7 @@ export default {
       let temp = document.querySelector('.activePanel');
       temp.classList.remove('activePanel');
       event.currentTarget.classList.add('activePanel');
+      this.display = !this.display
     }
   }
 }
@@ -79,6 +93,10 @@ export default {
           margin: 1rem 0.2rem 0rem 0rem;
           padding: 0rem 1.5rem 0rem 1.5rem;
           font-size: 1rem;
+
+          &:first-child {
+            margin-left: 0.5rem;
+          }
 
           & h2 {
             color: $light-gray-2;
@@ -121,7 +139,7 @@ export default {
         }
       }
 
-      &-body {
+      &-login {
         position: relative;
         background-color: $white;
         z-index: 10;
@@ -129,6 +147,7 @@ export default {
         height: 100%;
         max-height: 35rem;
         flex: 1;
+        @include flex-center;
       }
     }
   }

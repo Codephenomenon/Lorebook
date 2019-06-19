@@ -23,9 +23,9 @@
           </div>
         </div>
         <!-- Sidebar component. -->
-        <div class="homeContent_sideBar">
-          side content
-        </div>
+      </div>
+      <div class="loreFeed">
+        <CommPanel/>
       </div>
     <Footer/>
   </div>
@@ -34,8 +34,9 @@
 <script>
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
-import Card from "./components/Card.vue";
-import Auth from "./components/Auth.vue";
+import Card from "./components/home/Card.vue";
+import Auth from "./components/home/Auth.vue";
+import CommPanel from "./components/home/Community.vue";
 
 export default {
   name: 'Home',
@@ -43,19 +44,29 @@ export default {
     Header,
     Footer,
     Card,
-    Auth
+    Auth,
+    CommPanel
   },
   data: function() {
     return {
       component: 'about',
       auth: false,
       landingCards: [
-        { title: 'Envision',
-          img: `brainIcon`, 
-          content: 'wadas jkwa wadamsd; mawdasd.'
+        {
+          title: 'Envision',
+          img: `brainIcon`,
+          content: 'Integer luctus velit augue, consectetur volutpat risus mattis non. In ac vehicula nunc. Etiam at est ligula. Donec pretium imperdiet mi ac accumsan. In auctor lacus ipsum, ac finibus nisl consectetur quis. Aliquam accumsan ex libero, placerat tempus urna porttitor vitae. Ut ipsum mauris, pellentesque quis sodales non, dictum vitae turpis. Mauris fringilla nulla et velit volutpat suscipit.'
         },
-        { title: 'Create', img: 'triangle', content: 'wad wam wldawlw oefop eo.' },
-        { title: 'Share', img: 'square', content: 'wasdwakj nnu4ionfo oiands.' }
+        {
+          title: 'Create',
+          img: 'triangle',
+          content: 'Ut commodo ac velit a tincidunt. In fermentum, ligula vitae volutpat tincidunt, quam nunc ornare est, vitae tempor arcu urna sed nisl. Duis velit purus, feugiat nec gravida in, tincidunt et lacus. Sed mauris odio, malesuada in dolor eget, interdum elementum erat. Curabitur faucibus dui eu tincidunt malesuada. Fusce eleifend arcu at venenatis tincidunt. Duis pretium auctor velit, nec mollis lorem tristique a. Pellentesque consequat mi urna, sit amet ultricies nisl dictum a. Curabitur malesuada molestie augue maximus mollis.'
+        },
+        {
+          title: 'Share',
+          img: 'square',
+          content: 'Integer libero libero, accumsan in turpis sed, lacinia facilisis ex. Mauris aliquet, justo quis placerat accumsan, lacus diam interdum dolor, at eleifend nisi nisl ut ipsum. Quisque in nibh at eros tempus maximus ac eu magna. Vestibulum cursus gravida imperdiet. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam interdum sodales porta.'
+        }
       ]
     }
   },
@@ -65,7 +76,6 @@ export default {
     },
     authPanel: function() {
       this.auth = !this.auth;
-      console.log(this.auth);
     }
   }
 }
@@ -76,6 +86,14 @@ export default {
     width: 100%;
     height: auto;
     min-height: 100vh;
+  }
+
+  .homeContent {
+    width: 100%;
+    height: 100%;
+    min-height: $mainContent-height;
+    display: flex;
+    flex-direction: row;
     position: relative;
 
     &::after {
@@ -87,25 +105,22 @@ export default {
       left: 0;
       background-color: $light-gray-1;
     }
-  }
-
-  .homeContent {
-    width: 100%;
-    height: 100%;
-    min-height: $home-height;
-    display: flex;
-    flex-direction: row;
 
     &_mainContent, &_supportContent, &_teamContent {
-      flex: 0 0 80%;
+      flex: 1;
       z-index: 10;
       @include flex-center(space-around);
     }
+  }
 
-    &_sideBar {
-      flex: 0 0 20%;
-      z-index: 10;
-    }
+  .loreFeed {
+    width: 100%;
+    height: 100%;
+    min-height: $commContent-height;
+    display: flex;
+    flex-direction: row;
+    background-image: linear-gradient(lighten($primary, 10%), $primary);
+    @include flex-center;
   }
 
   .supportPanel, .teamPanel {

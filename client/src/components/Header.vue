@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="header">
-    <img class="header_logo" src="../assets/lorebook.png" alt="Logo">
+    <img class="header_logo" src="../assets/lorebook-logo.png" alt="Logo">
     <ul class="header_nav">
       <li class="header_nav-item" v-on:click="changeContent('about')">About</li>
       <li class="header_nav-item" v-on:click="changeContent('support')">Support</li>
@@ -27,7 +27,7 @@ export default {
 
 <style lang="scss" scoped>
   .header {
-    width: 100%;
+    width: calc(100% - 14px);
     height: $header-height;
     background-color: $primary;
     @include box-shadow;

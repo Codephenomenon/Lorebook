@@ -47,8 +47,6 @@ export default {
   #user {
     width: 100%;
     height: 100%;
-    clear: both;
-    float: left;
   }
 
   .userPanel {
@@ -70,7 +68,7 @@ export default {
 
     .userActivity {
       grid-area: row-start / 3 / row-end / 7;
-      padding: 2rem 1rem 2rem 2rem;
+      padding: 1rem 0.5rem 1rem 1rem;
       @include flex-center;
 
       &_feed {
@@ -80,8 +78,8 @@ export default {
     }
 
     .userCodex {
-      grid-area: row-start / 7 / 6 / 10;
-      padding: 2rem 2rem 1rem 1rem;
+      grid-area: row-start / 7 / 6 / 11;
+      padding: 1rem 1rem 0.5rem 0.5rem;
       @include flex-center;
 
       &_panel {
@@ -91,8 +89,8 @@ export default {
     }
 
     .userResources {
-      grid-area: 6 / 7 / row-end / 10;
-      padding: 1rem 2rem 2rem 1rem;
+      grid-area: 6 / 7 / row-end / 11;
+      padding: 0.5rem 1rem 1rem 0.5rem;
 
       @include flex-center;
 
@@ -100,6 +98,15 @@ export default {
         @include user-box;
         animation: pop-in 0.4s ease-in;
       }
+    }
+
+    .adSpace {
+      grid-area: row-start / 11 / row-end / col-end;
+      padding: 1rem;
+
+      background-color: rgba($black, 0.2);
+
+      @include flex-center;
     }
   }
 </style>

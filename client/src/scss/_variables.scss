@@ -2,7 +2,10 @@
 $primary: #f89118;
 $primary-dark: #DF8417;
 
-$secondary: #5BAD10;
+$secondary: #19B6F7;
+$secondary-dark: #0078AB;
+
+$tertiary: #FFD233;
 
 $white: #FFF;
 $black: #000;
@@ -11,10 +14,12 @@ $light-gray-1: #EBEBEB;
 $light-gray-2: #F5F5F5;
 
 $dark-gray-1: #241B1D;
+$dark-gray-2: #515553;
 
 // Components
 $header-height: 5rem;
 $footer-height: 3rem;
 $card-background: linear-gradient(#{$white}, #{$light-gray-2});
-$home-height: calc(100vh - (#{$header-height} + #{$footer-height}));
+$mainContent-height: calc(100vh - #{$header-height});
+$commContent-height: calc(100vh - #{$footer-height});
 $user-height: calc(100% - #{$footer-height});

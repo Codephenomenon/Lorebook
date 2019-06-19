@@ -14,18 +14,18 @@ export default {
 </script>
 
 <style lang="scss">
-  html {
-      overflow: hidden;
-  }
-
-  body {
-    margin: 0;
-    padding: 0;
+  html, body {
+      overflow-x: hidden;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
   }
 
   #app {
     margin: 0;
     padding: 0;
+    float: left;
     box-sizing: border-box;
     display: inline-block;
 
