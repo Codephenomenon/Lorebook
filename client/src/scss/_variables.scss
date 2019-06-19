@@ -1,0 +1,20 @@
+// Colors
+$primary: #f89118;
+$primary-dark: #DF8417;
+
+$secondary: #5BAD10;
+
+$white: #FFF;
+$black: #000;
+
+$light-gray-1: #EBEBEB;
+$light-gray-2: #F5F5F5;
+
+$dark-gray-1: #241B1D;
+
+// Components
+$header-height: 5rem;
+$footer-height: 3rem;
+$card-background: linear-gradient(#{$white}, #{$light-gray-2});
+$home-height: calc(100vh - (#{$header-height} + #{$footer-height}));
+$user-height: calc(100% - #{$footer-height});

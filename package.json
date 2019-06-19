@@ -1,0 +1,14 @@
+{
+  "name": "lorebook-server",
+  "version": "1.0.0",
+  "description": "A Node and Express server for Lorebook",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "DC",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
