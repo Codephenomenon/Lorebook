@@ -3,9 +3,7 @@
     <div class="card">
       <div class="card_front">
         <h1 class="card_front-title">{{ title }}</h1>
-        <object data="" type="image/svg+xml">
-          <use xlink:href="~@/assets/icons.svg#brainIcon" />
-        </object>
+        <img v-bind:src="img" alt="icon">
         <p class="card_front-content">{{ content }}</p>
       </div>
       <div class="card_back">

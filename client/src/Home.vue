@@ -35,7 +35,7 @@
 import Header from "./components/Header.vue";
 import Footer from "./components/Footer.vue";
 import Card from "./components/home/Card.vue";
-import Auth from "./components/home/Auth.vue";
+import Auth from "./components/utils/Auth.vue";
 import CommPanel from "./components/home/Community.vue";
 
 export default {
@@ -54,7 +54,7 @@ export default {
       landingCards: [
         {
           title: 'Envision',
-          img: `brainIcon`,
+          img: '@/assets/lorebook.png',
           content: 'Integer luctus velit augue, consectetur volutpat risus mattis non. In ac vehicula nunc. Etiam at est ligula. Donec pretium imperdiet mi ac accumsan. In auctor lacus ipsum, ac finibus nisl consectetur quis. Aliquam accumsan ex libero, placerat tempus urna porttitor vitae. Ut ipsum mauris, pellentesque quis sodales non, dictum vitae turpis. Mauris fringilla nulla et velit volutpat suscipit.'
         },
         {
@@ -110,6 +110,7 @@ export default {
       flex: 1;
       z-index: 10;
       @include flex-center(space-around);
+      padding: 0rem 3rem;
     }
   }
 

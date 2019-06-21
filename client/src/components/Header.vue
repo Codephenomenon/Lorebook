@@ -5,6 +5,7 @@
       <li class="header_nav-item" v-on:click="changeContent('about')">About</li>
       <li class="header_nav-item" v-on:click="changeContent('support')">Support</li>
       <li class="header_nav-item" v-on:click="changeContent('team')">Team</li>
+      <li class="header_nav-item">Forum</li>
     </ul>
     <div class="header_btn">
       <span v-on:click="displayAuth()" id="login">Login</span>
@@ -38,7 +39,7 @@ export default {
 
     &_logo {
       flex: 1;
-      max-width: 6rem;
+      max-width: 4.5rem;
       max-height: 3.8rem;
       margin-top: 0.1rem;
       width: 100%;

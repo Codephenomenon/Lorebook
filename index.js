@@ -1,13 +1,25 @@
 const express = require('express');
 const cors = require('cors');
+const mongoose = require('mongoose');
 const bodyParser = require("body-parser");
+const passport = require('passport');
+const cookieSession = require('cookie-session');
+const keys = require('./config/keys');
+
+// import mongoose models
+require('./models/user');
+
+//mongoose.connect(keys.mongoURI);
 
 const app = express();
+
+// import application routes
+require('./routes/authUser')(app);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-app.get('', (req, res) => {
+app.get('/api/hello', (req, res) => {
   res.send('Hello Server.');
 });
 

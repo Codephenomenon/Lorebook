@@ -11,5 +11,20 @@ module.exports = {
         `
       }
     }
+  },
+  devServer: {
+    proxy: {
+      "/api/*": {
+        target: "http://localhost:4000",
+        secure: false
+      }
+    }
+  },
+  chainWebpack: config => {
+    config.module
+      .rule('images')
+        .use('url-loader')
+          .loader('url-loader')
+          .tap(options => Object.assign(options, { limit: 10240 }))
   }
 };

@@ -1,10 +1,7 @@
 <template lang="html">
   <div id="user">
     <div class="userPanel">
-      <div class="userControl">
-        <!-- Creation Controls, logout and settings. -->
-        user controls
-      </div>
+      <ControlPanel/>
       <div class="userActivity">
         <div class="userActivity_feed">
           <!-- Recent activity, encounters, and entries. -->
@@ -33,12 +30,14 @@
 </template>
 
 <script>
-import Footer from "./components/Footer.vue"
+import Footer from "./components/Footer.vue";
+import ControlPanel from "./components/user/UserControl.vue";
 
 export default {
   name: 'User',
   components: {
-    Footer
+    Footer,
+    ControlPanel
   }
 }
 </script>
@@ -60,11 +59,6 @@ export default {
     grid-template-rows: [row-start] 1fr repeat(10, [row] 1fr) 1fr [row-end];
 
     // Component styles (will need refactoring).
-    .userControl {
-      grid-area: row-start / col-start / row-end / 3;
-      background-color: $primary;
-      @include box-shadow;
-    }
 
     .userActivity {
       grid-area: row-start / 3 / row-end / 7;
